@@ -1,0 +1,10 @@
+FROM myapp:latest
+
+ARG token
+
+RUN apt-get update && apt-get -y install ca-certificates --no-install-recommends wget && \
+  wget -O /microscanner https://get.aquasec.com/microscanner && \
+    chmod +x /microscanner && \
+    /microscanner ${token} && \ 
+    # Add `--continue-on-failure` if we want to continue even if high severity issues are found
+    rm -rf /microscanner
