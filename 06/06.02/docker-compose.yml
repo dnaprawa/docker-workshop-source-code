@@ -7,7 +7,7 @@ services:
       context: ./ui
       args:
         NODE_ENV: production
-        REACT_APP_SERVICE_HOST: http://localhost:8080
+        REACT_APP_SERVICE_HOST: ${BACKEND_URL:-http://localhost:8080}
     ports:
       - "3000:80"
 
