@@ -1,0 +1,13 @@
+Automatyczne budowanie, skanowanie i publikowanie obrazów (Github)
+
+1. Zakładamy repo na Github (np. nodejs-example) - może być prywtane
+2. Tworzymy repozytorium na Docker Hub (np. nodejs-example).
+3. Inicjalizujemy repozytorium z gita, patrz README.md
+4. Idziemy na Github -> Settings -> Secrets
+ - dodajemy sekrety: DOCKERHUB_USERNAME, DOCKERHUB_TOKEN, DOCKERHUB_REPOSITORY
+
+ (token bierzemy z Docker Huba)
+5. Idziemy na Github -> Actions -> CI -> run worklow
+6. Poźniej idziemy i odpalamy Secure-CI - wywali się 
+7. pytanie: "Co trzeba zrobić - żeby przeszło?"
+8. Szukamy obrazu bezpiecznego, np. node:14.2-buster-slim
